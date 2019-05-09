@@ -11,12 +11,12 @@ RUN echo 'Building image...' \
   && rm -f /etc/zypp/repos.d/* \
   \
   # Add repositories
-  && zypper addrepo "http://download.opensuse.org/tumbleweed/repo/oss/" "OSS" \
-  && zypper addrepo "http://download.opensuse.org/tumbleweed/repo/src-oss/" "Src-OSS" \
-  && zypper addrepo "obs://devel:tools:scm/openSUSE_Tumbleweed/" "Devel:Tools:SCM" \
-  && zypper addrepo --priority 1 "obs://KDE:Unstable:Qt/openSUSE_Tumbleweed/" "KDE:Unstable:Qt" \
-  && zypper addrepo --priority 1 "obs://KDE:Unstable:Frameworks/openSUSE_Factory/" "KDE:Unstable:Frameworks" \
-  && zypper addrepo --priority 1 "obs://KDE:Unstable:Applications/KDE_Unstable_Frameworks_openSUSE_Factory/" "KDE:Unstable:Applications" \
+  && zypper addrepo --refresh "http://download.opensuse.org/tumbleweed/repo/oss/" "OSS" \
+  && zypper addrepo --refresh "http://download.opensuse.org/tumbleweed/repo/src-oss/" "Src-OSS" \
+  && zypper addrepo --refresh "obs://devel:tools:scm/openSUSE_Tumbleweed/" "Devel:Tools:SCM" \
+  && zypper addrepo --refresh --priority 1 "obs://KDE:Unstable:Qt/openSUSE_Tumbleweed/" "KDE:Unstable:Qt" \
+  && zypper addrepo --refresh --priority 1 "obs://KDE:Unstable:Frameworks/openSUSE_Factory/" "KDE:Unstable:Frameworks" \
+  && zypper addrepo --refresh --priority 1 "obs://KDE:Unstable:Applications/KDE_Unstable_Frameworks_openSUSE_Factory/" "KDE:Unstable:Applications" \
   \
   # Refresh all repositories
   && zypper -n --gpg-auto-import-keys refresh \
