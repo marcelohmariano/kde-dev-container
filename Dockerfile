@@ -17,8 +17,8 @@ RUN echo 'Building image...' \
   # Refresh all repositories
   && zypper -n --gpg-auto-import-keys refresh \
   \
-  # Install sudo
-  && zypper -n install --no-recommends sudo \
+  # Install sudo and which
+  && zypper -n install --no-recommends sudo which \
   \
   # Install development packages
   && zypper -n install --recommends -t pattern devel_kde_frameworks \
