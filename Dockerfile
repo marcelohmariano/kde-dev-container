@@ -4,6 +4,10 @@ COPY ./image/ /tmp/
 
 RUN echo 'Building image...' \
   \
+  # Setup image entrypoint
+  && cp /tmp/entrypoint.sh / \
+  && chmod +x /entrypoint.sh \
+  \
   && rm -f /etc/zypp/repos.d/* \
   \
   # Add repositories
@@ -97,3 +101,6 @@ VOLUME \
 
 USER dev
 WORKDIR $HOME
+
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["/bin/bash"]
