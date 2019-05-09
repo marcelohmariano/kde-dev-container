@@ -33,6 +33,7 @@ RUN echo 'Building image...' \
     arc \
     ccache \
     gdb \
+    kcachegrind \
   \
   # Install kdesrc-build dependencies
   && zypper -n install --no-recommends \
