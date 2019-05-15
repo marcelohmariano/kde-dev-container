@@ -21,8 +21,8 @@ RUN echo 'Building image...' \
   # Refresh all repositories
   && zypper -n --gpg-auto-import-keys refresh \
   \
-  # Install sudo and which
-  && zypper -n install --no-recommends sudo which \
+  # Install some utilities
+  && zypper -n install --no-recommends sudo xterm which \
   \
   # Install development packages
   && zypper -n install --recommends -t pattern devel_kde_frameworks \
