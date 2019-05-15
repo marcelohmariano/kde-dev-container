@@ -108,8 +108,9 @@ kdesrc-build konsole
 
 * Arcanist - a command-line interface to [Phabricator](https://phabricator.kde.org/)
 * CMake - a cross-platform build system generator
-* QtCreator - a lightweight cross-platform IDE
 * KCachegrind - a profile data visualization tool for Callgrind
+* KDbg - a graphical user interface to gdb
+* QtCreator - a lightweight cross-platform IDE
 * Valgrind - a tool for memory debugging, memory leak detection, and profiling
 * ccache - a fast compiler cache
 * g++ - the GNU C++ compiler
