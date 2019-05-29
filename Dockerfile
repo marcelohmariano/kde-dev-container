@@ -22,7 +22,7 @@ RUN echo 'Building image...' \
   && zypper -n --gpg-auto-import-keys refresh \
   \
   # Install some utilities
-  && zypper -n install --no-recommends sudo xterm which \
+  && zypper -n install --no-recommends sudo vim which xterm \
   \
   # Install development packages
   && zypper -n install --recommends -t pattern devel_kde_frameworks \
