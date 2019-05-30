@@ -34,7 +34,7 @@ RUN echo 'Building image...' \
   \
   # Install dev tools
   && zypper -n install --no-recommends \
-    arc \
+    arcanist \
     ccache \
     gdb \
     kcachegrind \
