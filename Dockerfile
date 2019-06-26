@@ -1,5 +1,7 @@
 FROM opensuse/tumbleweed
 
+ARG PACKAGES=kde-frameworks
+
 COPY ./image/ /tmp/
 
 RUN echo 'Building image...' \
@@ -24,8 +26,8 @@ RUN echo 'Building image...' \
   # Install some utilities
   && zypper -n install --no-recommends sudo vim which xterm \
   \
-  # Install development packages
-  && zypper -n install --recommends -t pattern devel_kde_frameworks \
+  # Install image packages
+  && sh /tmp/kde_dev_install.sh "$PACKAGES" \
   \
   # Install fonts
   && zypper -n install --no-recommends \

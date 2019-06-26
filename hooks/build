@@ -1,0 +1,4 @@
+#!/bin/bash
+set -e
+
+docker build --build-arg PACKAGES=$DOCKER_TAG -f $DOCKERFILE_PATH -t $IMAGE_NAME .
