@@ -23,8 +23,15 @@ RUN echo 'Building image...' \
   # Refresh all repositories
   && zypper -n --gpg-auto-import-keys refresh \
   \
-  # Install some utilities
-  && zypper -n install --no-recommends sudo vim which xterm \
+  # Install build requirements
+  && zypper -n install --no-recommends util-linux \
+  \
+  # Install system utilities
+  && zypper -n install --no-recommends \
+    sudo \
+    vim \
+    which \
+    xterm \
   \
   # Install image packages
   && sh /tmp/kde_dev_install.sh "$PACKAGES" \
@@ -78,6 +85,7 @@ RUN echo 'Building image...' \
   && su -c 'cp /tmp/home/dev/kdesrc-buildrc ~/.kdesrc-buildrc' - dev \
   \
   # Cleanup
+  && zypper -n remove --clean-deps util-linux \
   && zypper clean -a \
   && rm -rf /tmp/*
 
