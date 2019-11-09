@@ -1,7 +1,7 @@
-#!/bin/sh
+#!/usr/bin/env bash
 set -e
 
-if [ ! -z "$1" ]; then
+if [ -n "$1" ]; then
   case $1 in
     plasma-desktop)
       zypper -n install -t pattern kde_plasma
