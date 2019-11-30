@@ -1,7 +1,6 @@
 #!/bin/bash
 set -e
 
-if [ "$DOCKER_TAG" == "kde-frameworks" ]; then
-  docker tag $IMAGE_NAME $DOCKER_REPO:latest
-  docker push $DOCKER_REPO:latest
-fi
+for tag in {qt,kde-frameworks,plasma-desktop}; do
+  docker push "${DOCKER_REPO}:${tag}"
+done

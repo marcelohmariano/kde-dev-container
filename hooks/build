@@ -1,4 +1,8 @@
 #!/bin/bash
 set -e
 
-docker build --build-arg PACKAGES=$DOCKER_TAG -f $DOCKERFILE_PATH -t $IMAGE_NAME .
+for tag in {qt,kde-frameworks,plasma-desktop}; do
+  docker build --target "$tag" -f "$DOCKERFILE_PATH" -t "${DOCKER_REPO}:${tag}" .
+done
+
+docker tag "${DOCKER_REPO}:kde-frameworks" "${DOCKER_REPO}:latest"
