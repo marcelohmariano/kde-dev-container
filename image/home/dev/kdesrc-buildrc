@@ -18,4 +18,4 @@ global
     kdedir ~/kde/usr
 end global
 
-include ~/kdesrc-build/kf5-qt5-build-include
+include ~/.kdesrc-build/kf5-qt5-build-include
