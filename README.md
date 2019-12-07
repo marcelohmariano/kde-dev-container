@@ -94,6 +94,7 @@ kdesrc-build konsole
 #### Environment Variables
 
 * `DISPLAY` - the X display server that the GUI applications will connect to
+* `TZ` - the timezone to used by the container applications
 
 #### Volumes
 
