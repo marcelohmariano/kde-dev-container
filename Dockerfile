@@ -120,7 +120,7 @@ RUN \
   sudo zypper clean -a
 
 
-FROM kde-frameworks as plasma-desktop
+FROM kde-frameworks as kde-plasma
 
 RUN \
   sudo zypper -n install -t pattern kde_plasma && \

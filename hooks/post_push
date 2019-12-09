@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
 
-for tag in {qt,kde-frameworks,plasma-desktop}; do
+for tag in {qt,kde-frameworks,kde-plasma}; do
   docker push "${DOCKER_REPO}:${tag}"
 done

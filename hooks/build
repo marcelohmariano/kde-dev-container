@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-for tag in {qt,kde-frameworks,plasma-desktop}; do
+for tag in {qt,kde-frameworks,kde-plasma}; do
   docker build --target "$tag" -f "$DOCKERFILE_PATH" -t "${DOCKER_REPO}:${tag}" .
 done
 
