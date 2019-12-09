@@ -43,13 +43,14 @@ RUN \
     gdb \
     git \
     kcachegrind \
-    kdbg && \
+    kdbg \
+    python3 && \
   \
   # Install Qt
   zypper -n install --recommends -t pattern devel_qt5 && \
   \
   # Create default user
-  useradd -m -g users dev && \
+  useradd -m -g users -p "$(python3 -c 'import crypt; print(crypt.crypt(""))')" dev && \
   echo 'dev ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/dev && \
   \
   # Configure Git URL prefixes for KDE repositories
