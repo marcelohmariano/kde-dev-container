@@ -124,4 +124,5 @@ FROM kde-frameworks as kde-plasma
 
 RUN \
   sudo zypper -n install -t pattern kde_plasma && \
-  sudo zypper -n install --no-recommends dolphin
+  sudo zypper -n install --no-recommends dolphin && \
+  sudo zypper clean -a
