@@ -8,7 +8,7 @@ A Docker container for developing KDE applications.
 
 ## Getting Started
 
-These instructions will cover usage information and for the Docker container.
+These instructions will cover usage information for the Docker container.
 
 ### Prerequisities
 
